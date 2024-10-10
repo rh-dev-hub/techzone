@@ -1,0 +1,70 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: retail-store
+  description: "Inventory microservice for retail store"
+  annotations:
+    #argocd/app-selector: rht-gitops.com/janus-argocd=coolstore-inventory-quarkus-bootstrap
+    backstage.io/kubernetes-id: retail-store
+    backstage.io/kubernetes-namespace: retail-store
+    #janus-idp.io/tekton: coolstore-inventory-quarkus
+    backstage.io/source-location: url:https://github.com/rh-dev-hub/techzone.git
+    backstage.io/techdocs-ref: url:https://github.com/rh-dev-hub/techzone.git
+    #gitlab.com/project-slug: development/coolstore-inventory-quarkus
+    quay.io/repository-slug: "quayadmin/coolstore-inventory-quarkus"
+  tags:
+    - java
+    - quarkus
+    - maven
+    - demo
+    - retailstore
+  links:
+    - url: https://console-openshift-console.apps.6705246d5afee30585aa6fa6.ocp.techzone.ibm.com/k8s/ns/retail-store/
+      title: OpenShift Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.6705246d5afee30585aa6fa6.ocp.techzone.ibm.com/#https://github.com/rh-dev-hub/techzone-demo.git
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+    - url: https://devspaces.apps.cluster-bjwf7.sandbox185.opentlc.com/#https://gitlab-gitlab.apps.cluster-bjwf7.sandbox185.opentlc.com/development/coolstore-inventory-quarkus?che-editor=che-incubator/che-idea/latest
+      title: OpenShift Dev Spaces (JetBrains IntelliJ)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "rh-dev-hub"
+  system: retail-store
+  providesApis:
+    - retail-store-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: retail-store
+  tags:
+    - retailstore
+    - demo
+spec:
+  owner: "rh-dev-hub"
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: retail-store-api
+  description: "Inventory microservice for retail store"
+spec:
+  type: openapi
+  lifecycle: production
+  owner: "rh-dev-hub"
+  system: retail-store
+  definition:
+    $text: ./openapi.yaml
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Dimain
+# metadata:
+#   name: retail
+#   tags:
+#     - retailstore
+#     - demo
+# spec:
+#   owner: "rh-dev-hub"
