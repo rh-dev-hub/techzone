@@ -19,6 +19,9 @@ metadata:
     - demo
     - retailstore
   links:
+    - url: https://retail-web-retail-store.apps.6705246d5afee30585aa6fa6.ocp.techzone.ibm.com
+      title: Retail Store
+      icon: web
     - url: https://console-openshift-console.apps.6705246d5afee30585aa6fa6.ocp.techzone.ibm.com/k8s/ns/retail-store/
       title: OpenShift Pipelines
       icon: web
