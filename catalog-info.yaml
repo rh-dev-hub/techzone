@@ -35,6 +35,8 @@ spec:
   system: retail-store
   providesApis:
     - retail-store-api
+  dependsOn:
+    - resource:default/mongodb
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System
@@ -58,6 +60,16 @@ spec:
   system: retail-store
   definition:
     $text: ./openapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mongodb
+  description: Stores products and order details
+spec:
+  type: database
+  owner: rh-dev-hub
+  system: retail-store
 # ---
 # apiVersion: backstage.io/v1alpha1
 # kind: Dimain
