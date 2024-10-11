@@ -58,6 +58,8 @@ spec:
   lifecycle: production
   owner: "rh-dev-hub"
   system: retail-store
+  dependsOn:
+    - resource:default/mongodb
   definition:
     $text: ./openapi.yaml
 ---
