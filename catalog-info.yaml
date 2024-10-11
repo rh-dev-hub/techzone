@@ -29,7 +29,7 @@ metadata:
       title: OpenShift Dev Spaces (JetBrains IntelliJ)
       icon: web
 spec:
-  type: service
+  type: website
   lifecycle: production
   owner: "rh-dev-hub"
   system: retail-store
