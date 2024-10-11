@@ -4,7 +4,7 @@ info:
   title: Retail Store API
   version: 1.0.0
 servers:
-- url: https://retailmsvc-retail-store.apps.66a64ff6d70fa4001ee0caae.ocp.techzone.ibm.com/
+- url: https://retail-svc-retail-store.apps.6705246d5afee30585aa6fa6.ocp.techzone.ibm.com
   description: (RHDH component deployment)
 - url: http://localhost:8080
   description: (localhost development / testing)
